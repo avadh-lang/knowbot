@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  background: #0D0B1A;
+}
+
+/* Animated gradient background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(109, 40, 217, 0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(49, 46, 129, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(15, 10, 40, 0.8) 0%, transparent 100%),
+    linear-gradient(160deg, #0D0B1A 0%, #150E2E 50%, #0A0D1F 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+body > * { position: relative; z-index: 1; }
+
+/* Scrollbar */
+* { scrollbar-width: thin; scrollbar-color: rgba(139,92,246,0.3) transparent; }
+*::-webkit-scrollbar { width: 4px; }
+*::-webkit-scrollbar-thumb { background: rgba(139,92,246,0.3); border-radius: 4px; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.3; transform: scale(0.6); }
+}
+
+.msg-enter { animation: fadeUp 0.3s ease forwards; }
+
+.typing-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(167,139,250,0.8);
+  animation: pulse-dot 1.4s ease-in-out infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.source-chip {
+  @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold;
+  background: rgba(139,92,246,0.2);
+  color: #c4b5fd;
+  border: 1px solid rgba(139,92,246,0.3);
+}
