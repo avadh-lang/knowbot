@@ -4,6 +4,25 @@ A no-code AI-powered Knowledge Assistant built with **n8n**, **Groq**, **Pinecon
 
 ---
 
+## Screenshots
+
+### KnowBot UI
+![KnowBot UI](screenshots/knowbot-ui.png)
+
+### Document Indexed & Ready
+![Document Indexed](screenshots/doc-ingested.png)
+
+### Chat in Action
+![Chat Output](screenshots/final-chat-output.png)
+
+### n8n — Document Ingestion Workflow
+![Ingestion Workflow](<screenshots/document-ingestion(n8n workflow1).png>)
+
+### n8n — RAG Chat Agent Workflow
+![RAG Chat Workflow](<screenshots/rag-agent(n8n workflow2).png>)
+
+---
+
 ## Architecture
 
 ```
